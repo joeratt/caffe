@@ -15,12 +15,12 @@ object Main {
   /**
    * Exercise 1
    */
-  def pascal(c: Int, r: Int): Int =
+  def pascal(c: BigInt, r: BigInt): BigInt =
     {
 
-      def choose(c: Int, r: Int): Int = factorial(r) / (factorial(c) * factorial(r - c))
+      def choose(c: BigInt, r: BigInt): BigInt = factorial(r) / (factorial(c) * factorial(r - c))
 
-      def factorial(n: Int): Int =
+      def factorial(n: BigInt): BigInt =
         if (n == 0) 1 else n * factorial(n - 1)
 
       choose(c, r)
