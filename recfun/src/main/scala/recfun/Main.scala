@@ -36,12 +36,10 @@ object Main {
             false
           else if (chars.isEmpty)
             score == 0
-          else {
-            var c = chars.head
-            if (c == '(') iterate(score + 1, chars.tail)
-            else if (c == ')') iterate(score - 1, chars.tail)
-            else iterate(score, chars.tail)
-          }
+          else if (chars.head == '(') iterate(score + 1, chars.tail)
+          else if (chars.head == ')') iterate(score - 1, chars.tail)
+          else iterate(score, chars.tail)
+
         }
 
       iterate(0, chars)
