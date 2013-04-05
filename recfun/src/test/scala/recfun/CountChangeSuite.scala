@@ -23,4 +23,20 @@ class CountChangeSuite extends FunSuite {
   test("countChange: unsorted CHF") {
     assert(countChange(300,List(500,5,50,100,20,200,10)) === 1022)
   }
+  
+  test("countChange: money=5, coins=[10]") {
+    assert(countChange(5,List(10)) === 0)
+  }
+
+test("countChange: money=1, coins=[1]") {
+    assert(countChange(1,List(1)) === 1)
+  }
+
+test("countChange: money=-10, coins=[5]") {
+    assert(countChange(-10,List(5)) === 0)
+  }
+
+test("countChange: money=0, coins=[0]") {
+    assert(countChange(0,List(0)) === 1)
+  }
 }

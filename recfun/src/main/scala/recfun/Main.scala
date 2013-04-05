@@ -48,5 +48,17 @@ object Main {
   /**
    * Exercise 3
    */
-  def countChange(money: Int, coins: List[Int]): Int = 0
+  def countChange(money: Int, coins: List[Int]): Int =
+    {
+      def iterate(money: Int, coins: List[Int]): Int =
+        if (money == 0)
+          1
+        else if (money < 0 || coins.isEmpty)
+          0
+        else {
+          iterate(money-coins.head,coins) + iterate(money,coins.tail)
+        }
+
+      iterate(money,coins)
+    }
 }
