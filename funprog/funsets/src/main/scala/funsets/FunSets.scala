@@ -15,7 +15,7 @@ object FunSets {
   /**
    * Indicates whether a set contains a given element.
    */
-  def contains(s: Set, elem: Int): Boolean = s(elem)==true
+  def contains(s: Set, elem: Int): Boolean = s(elem)
 
   /**
    * Returns the set of the one given element.
@@ -43,35 +43,41 @@ object FunSets {
   /**
    * Returns the subset of `s` for which `p` holds.
    */
-  def filter(s: Set, p: Int => Boolean): Set = x => s(x)==p(x)
+  def filter(s: Set, p: Int => Boolean): Set = x => s(x) && p(x)
 
   /**
    * The bounds for `forall` and `exists` are +/- 1000.
    */
   val bound = 1000
+  
+  def emptySet:Set = x=>false
 
   /**
    * Returns whether all bounded integers within `s` satisfy `p`.
    */
   def forall(s: Set, p: Int => Boolean): Boolean = {
     def iter(a: Int): Boolean = {
-      if (???) ???
-      else if (???) ???
-      else iter(???)
+      if (a > bound) true
+      else if (s(a))
+        if (!p(a)) false
+        else iter(a+1)
+      else iter(a + 1)
     }
-    iter(???)
+    iter(-bound)
   }
 
   /**
    * Returns whether there exists a bounded integer within `s`
    * that satisfies `p`.
    */
-  def exists(s: Set, p: Int => Boolean): Boolean = ???
+  def exists(s: Set, p: Int => Boolean): Boolean = !forall(s,(x: Int) => !p(x))
 
   /**
    * Returns a set transformed by applying `f` to each element of `s`.
    */
-  def map(s: Set, f: Int => Int): Set = ???
+  def map(s: Set, f: Int => Int): Set ={
+    f => exists(s,(y: Int) => false)
+  } 
 
   /**
    * Displays the contents of a set

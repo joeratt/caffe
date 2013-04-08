@@ -138,4 +138,25 @@ class FunSetSuite extends FunSuite {
       assert(!contains(sEmpty, 1), "filter 2")
     }
   }
+  
+  test("exits"){
+    new TestSets {
+      def s: Set = x=> (x ==1 || x == 3 || x == 4 || x == 5 || x == 7 || x == 999)
+      def p(x: Int): Boolean = x % 2 == 0
+      assert(exists(s, p))
+    }
+  }
+  
+  test("map thingy") {
+    new TestSets {
+      def s: Set = x=> (x ==1 || x == 3 || x == 4 || x == 5 || x == 7 || x == 1000)
+      def sTest: Set = x=> (x ==0 || x == 2 || x == 3 || x == 4 || x == 6 || x == 999)
+      def f(x: Int): Int = x-1 
+      val thing = map(s, f)
+//      printSet(thing)
+//      printSet(sTest)
+//      toString2(s)
+      assert(FunSets.toString(sTest)===FunSets.toString(thing))
+    }
+  }
 }
