@@ -153,8 +153,8 @@ class FunSetSuite extends FunSuite {
       def sTest: Set = x=> (x ==0 || x == 2 || x == 3 || x == 4 || x == 6 || x == 999)
       def f(x: Int): Int = x-1 
       val thing = map(s, f)
-//      printSet(thing)
-//      printSet(sTest)
+      printSet(thing)
+      printSet(sTest)
 //      toString2(s)
       assert(FunSets.toString(sTest)===FunSets.toString(thing))
     }

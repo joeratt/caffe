@@ -76,7 +76,7 @@ object FunSets {
    * Returns a set transformed by applying `f` to each element of `s`.
    */
   def map(s: Set, f: Int => Int): Set ={
-    f => exists(s,(y: Int) => false)
+    (x: Int) => exists((y: Int) => f(y) == x,s)
   } 
 
   /**
