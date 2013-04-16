@@ -46,7 +46,15 @@ class TweetSetSuite extends FunSuite {
 
   test("union: set4c and set4d") {
     new TestSets {
-      assert(size(set4c.union(set4d)) === 4)
+      val extractedLocalValue = set4c.union(set4d)
+      assert(size(extractedLocalValue) === 4)
+    }
+  }
+  
+  test("union: set4c and set3") {
+    new TestSets {
+      val extractedLocalValue = set4c.union(set3)
+      assert(size(extractedLocalValue) === 3)
     }
   }
 

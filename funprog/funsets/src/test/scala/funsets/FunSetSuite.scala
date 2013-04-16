@@ -159,4 +159,17 @@ class FunSetSuite extends FunSuite {
       assert(FunSets.toString(sTest)===FunSets.toString(thing))
     }
   }
+  
+  test("map thingy 2") {
+    new TestSets {
+      def s: Set = x=> (x ==1 || x == 3 || x == 4 || x == 5 || x == 7 || x == 1000)
+      def sTest: Set = x=> (x ==1 || x == 9 || x == 16 || x == 25 || x == 49 || x == (999*999))
+      def f(x: Int): Int = x*x 
+      val thing = map(s, f)
+      printSet(thing)
+      printSet(sTest)
+//      toString2(s)
+      assert(FunSets.toString(sTest)===FunSets.toString(thing))
+    }
+  }
 }
