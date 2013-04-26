@@ -53,7 +53,10 @@ class HuffmanSuite extends FunSuite {
   
   test("what is the secret") {
     assert(string2Chars("huffmanestcool") === decodedSecret)
-    println(decodedSecret)
+  }
+  
+  test("encoding the secret should give you the secret"){
+    assert(secret === encode(frenchCode)(string2Chars("huffmanestcool")))
   }
 
   test("decode and encode a very short text should be identity") {

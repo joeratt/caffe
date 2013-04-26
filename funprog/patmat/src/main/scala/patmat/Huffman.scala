@@ -191,7 +191,7 @@ object Huffman {
    * frequencies from that text and creates a code tree based on them.
    */
   def createCodeTree(chars: List[Char]): CodeTree = chars match {
-    case List() => throw new Error()
+    case List() => throw new IllegalArgumentException("The input list of characters cannot be empty")
     case c :: cs => {
       val leaves: List[Leaf] = makeOrderedLeafList(times(chars))
       until(singleton, combine)(leaves).head
@@ -214,6 +214,7 @@ object Huffman {
       case List() => Nil
       case 0 :: restBits => traverseTree(mainTree, restBits, l)
       case 1 :: restBits => traverseTree(mainTree, restBits, r)
+      case default => throw new IllegalArgumentException("Bits can only be 1 or 0")
     }
   }
 
@@ -241,16 +242,19 @@ object Huffman {
    * This function encodes `text` using the code tree `tree`
    * into a sequence of bits.
    */
-  def encode(tree: CodeTree)(text: List[Char]): List[Bit] = ???
-  
-/*   def createBits(mainTree: CodeTree, bitsProgression: List[Bit], currentTree: CodeTree): List[Char] = currentTree match {
-    case Leaf(c, w) => c :: traverseTree(mainTree, bitsProgression, mainTree)
-    case Fork(l, r, cs, w) => bitsProgression match {
-      case List() => Nil
-      case 0 :: restBits => traverseTree(mainTree, restBits, l)
-      case 1 :: restBits => traverseTree(mainTree, restBits, r)
+  def encode(tree: CodeTree)(text: List[Char]): List[Bit] = createBits(tree, text, tree, List())
+
+  def createBits(mainTree: CodeTree, charsProgression: List[Char], currentTree: CodeTree, bits: List[Bit]): List[Bit] = currentTree match {
+    case Leaf(c, w) => createBits(mainTree, charsProgression.tail, mainTree, bits)
+    case Fork(l, r, cs, w) => charsProgression match {
+      case List() => bits
+      case c :: ch => {
+        if (chars(l).contains(c)) createBits(mainTree, charsProgression, l, bits ::: List(0))
+        else if (chars(r).contains(c)) createBits(mainTree, charsProgression, r, bits ::: List(1))
+        else throw new Error()
+      }
     }
-  }*/
+  }
 
   // Part 4b: Encoding using code table
 
@@ -260,7 +264,13 @@ object Huffman {
    * This function returns the bit sequence that represents the character `char` in
    * the code table `table`.
    */
-  def codeBits(table: CodeTable)(char: Char): List[Bit] = ???
+  def codeBits(table: CodeTable)(char: Char): List[Bit] = table match {
+    case List() => List()
+    case pr :: prs => {
+      if (char == pr._1) pr._2
+      else codeBits(prs)(char)
+    }
+  }
 
   /**
    * Given a code tree, create a code table which contains, for every character in the
