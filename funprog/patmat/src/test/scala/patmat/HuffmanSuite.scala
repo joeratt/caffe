@@ -42,6 +42,19 @@ class HuffmanSuite extends FunSuite {
     val leaflist = List(Leaf('e', 1), Leaf('t', 2), Leaf('x', 4))
     assert(combine(leaflist) === List(Fork(Leaf('e',1),Leaf('t',2),List('e', 't'),3), Leaf('x',4)))
   }
+  
+  test("createCodeTree for \"AAAAAAAABBBCDEFGH\"") {
+
+    var resultTree = createCodeTree( string2Chars("AAAAAAAABBBCDEFGH") )
+
+    assert(resultTree == Fork(Leaf('A',8),Fork(Fork(Fork(Leaf('G',1),Leaf('H',1),List('G', 'H'),2),Fork(Leaf('E',1),Leaf('F',1),List('E', 'F'),2),List('G', 'H', 'E', 'F'),4),Fork(Fork(Leaf('C',1),Leaf('D',1),List('C', 'D'),2),Leaf('B',3),List('C', 'D', 'B'),5),List('G', 'H', 'E', 'F', 'C', 'D', 'B'),9),List('A', 'G', 'H', 'E', 'F', 'C', 'D', 'B'),17))
+
+  }
+  
+  test("what is the secret") {
+    assert(string2Chars("huffmanestcool") === decodedSecret)
+    println(decodedSecret)
+  }
 
   test("decode and encode a very short text should be identity") {
     new TestTrees {
