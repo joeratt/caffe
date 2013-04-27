@@ -280,7 +280,12 @@ object Huffman {
    * a valid code tree that can be represented as a code table. Using the code tables of the
    * sub-trees, think of how to build the code table for the entire tree.
    */
-  def convert(tree: CodeTree): CodeTable = ???
+  def convert(tree: CodeTree): CodeTable = createCodeTable(tree,List())
+  
+  def createCodeTable(tree: CodeTree, protoBits: List[Bit]): CodeTable = tree match {
+    case Leaf(c,w) => List((c,protoBits))
+    case Fork(l,r,cs,w) => createCodeTable(l,protoBits:::List(0)):::createCodeTable(r,protoBits:::List(1))
+  }
 
   /**
    * This function takes two code tables and merges them into one. Depending on how you
@@ -295,5 +300,15 @@ object Huffman {
    * To speed up the encoding process, it first converts the code tree to a code table
    * and then uses it to perform the actual encoding.
    */
-  def quickEncode(tree: CodeTree)(text: List[Char]): List[Bit] = ???
+  def quickEncode(tree: CodeTree)(text: List[Char]): List[Bit] = quickEncodeHelp(convert(tree),text)
+  
+  def quickEncodeHelp(codeTable: CodeTable, text: List[Char]): List[Bit] = text match {
+    case List() => Nil
+    case c::cs => codeBits(codeTable)(c):::quickEncodeHelp(codeTable,cs)
+  }
+    
+//  def quickEncodeHelper(tree: CodeTree,currCodeTable: CodeTable): CodeTable = tree match {
+//    case Leaf(c,w) => currCodeTable
+//    case Fork(l,r,cs,w) => mergeCodeTables()
+//  }
 }

@@ -10,8 +10,8 @@ import patmat.Huffman._
 @RunWith(classOf[JUnitRunner])
 class HuffmanSuite extends FunSuite {
   trait TestTrees {
-    val t1 = Fork(Leaf('a',2), Leaf('b',3), List('a','b'), 5)
-    val t2 = Fork(Fork(Leaf('a',2), Leaf('b',3), List('a','b'), 5), Leaf('d',4), List('a','b','d'), 9)
+    val t1 = Fork(Leaf('a', 2), Leaf('b', 3), List('a', 'b'), 5)
+    val t2 = Fork(Fork(Leaf('a', 2), Leaf('b', 3), List('a', 'b'), 5), Leaf('d', 4), List('a', 'b', 'd'), 9)
   }
 
   test("weight of a larger tree") {
@@ -22,12 +22,12 @@ class HuffmanSuite extends FunSuite {
 
   test("chars of a larger tree") {
     new TestTrees {
-      assert(chars(t2) === List('a','b','d'))
+      assert(chars(t2) === List('a', 'b', 'd'))
     }
   }
-  
+
   test("times") {
-      assert(List(('a',3),('b',1)) === times(List('a','a','b','a')))
+    assert(List(('a', 3), ('b', 1)) === times(List('a', 'a', 'b', 'a')))
   }
 
   test("string2chars(\"hello, world\")") {
@@ -35,33 +35,47 @@ class HuffmanSuite extends FunSuite {
   }
 
   test("makeOrderedLeafList for some frequency table") {
-    assert(makeOrderedLeafList(List(('t', 2), ('e', 1), ('x', 3))) === List(Leaf('e',1), Leaf('t',2), Leaf('x',3)))
+    assert(makeOrderedLeafList(List(('t', 2), ('e', 1), ('x', 3))) === List(Leaf('e', 1), Leaf('t', 2), Leaf('x', 3)))
   }
 
   test("combine of some leaf list") {
     val leaflist = List(Leaf('e', 1), Leaf('t', 2), Leaf('x', 4))
-    assert(combine(leaflist) === List(Fork(Leaf('e',1),Leaf('t',2),List('e', 't'),3), Leaf('x',4)))
+    assert(combine(leaflist) === List(Fork(Leaf('e', 1), Leaf('t', 2), List('e', 't'), 3), Leaf('x', 4)))
   }
-  
+
   test("createCodeTree for \"AAAAAAAABBBCDEFGH\"") {
 
-    var resultTree = createCodeTree( string2Chars("AAAAAAAABBBCDEFGH") )
+    var resultTree = createCodeTree(string2Chars("AAAAAAAABBBCDEFGH"))
 
-    assert(resultTree == Fork(Leaf('A',8),Fork(Fork(Fork(Leaf('G',1),Leaf('H',1),List('G', 'H'),2),Fork(Leaf('E',1),Leaf('F',1),List('E', 'F'),2),List('G', 'H', 'E', 'F'),4),Fork(Fork(Leaf('C',1),Leaf('D',1),List('C', 'D'),2),Leaf('B',3),List('C', 'D', 'B'),5),List('G', 'H', 'E', 'F', 'C', 'D', 'B'),9),List('A', 'G', 'H', 'E', 'F', 'C', 'D', 'B'),17))
+    assert(resultTree == Fork(Leaf('A', 8), Fork(Fork(Fork(Leaf('G', 1), Leaf('H', 1), List('G', 'H'), 2), Fork(Leaf('E', 1), Leaf('F', 1), List('E', 'F'), 2), List('G', 'H', 'E', 'F'), 4), Fork(Fork(Leaf('C', 1), Leaf('D', 1), List('C', 'D'), 2), Leaf('B', 3), List('C', 'D', 'B'), 5), List('G', 'H', 'E', 'F', 'C', 'D', 'B'), 9), List('A', 'G', 'H', 'E', 'F', 'C', 'D', 'B'), 17))
 
   }
-  
+
   test("what is the secret") {
     assert(string2Chars("huffmanestcool") === decodedSecret)
   }
-  
-  test("encoding the secret should give you the secret"){
+
+  test("encoding the secret should give you the secret") {
     assert(secret === encode(frenchCode)(string2Chars("huffmanestcool")))
+  }
+
+  test("quick encoding the secret should give you the secret") {
+    assert(secret === quickEncode(frenchCode)(string2Chars("huffmanestcool")))
   }
 
   test("decode and encode a very short text should be identity") {
     new TestTrees {
       assert(decode(t1, encode(t1)("ab".toList)) === "ab".toList)
     }
+  }
+
+  test("decode and quickEncode a very short text should be identity") {
+    new TestTrees {
+      assert(decode(t1, quickEncode(t1)("ab".toList)) === "ab".toList)
+    }
+  }
+
+  test("encoding the secret  and quickEncodingthe secret should give you the same secret") {
+    assert(encode(frenchCode)(string2Chars("huffmanestcool"))===quickEncode(frenchCode)(string2Chars("huffmanestcool")))
   }
 }
