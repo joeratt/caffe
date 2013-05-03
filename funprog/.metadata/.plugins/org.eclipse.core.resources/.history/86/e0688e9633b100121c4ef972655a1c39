@@ -1,0 +1,13 @@
+package week5
+
+object ImplicitParameters {
+
+def mergeGeneric(xs: List[T], ys: List[T]): List[T] =
+    (xs, ys) match {
+      case (Nil, ys) => ys
+      case (xs, Nil) => xs
+      case (x :: xs1, y :: ys1) =>
+        if (x < y) x :: mergeGeneric(xs1, ys)
+        else y :: mergeGeneric(xs, ys1)
+    }
+}

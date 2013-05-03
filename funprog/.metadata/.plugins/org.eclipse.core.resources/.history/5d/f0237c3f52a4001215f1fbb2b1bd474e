@@ -1,0 +1,22 @@
+package week3
+
+import week3._
+
+object Polymorphism {
+  def singleton[T](elem: T) = new Cons[T](elem, new Nil[T])
+
+  singleton[Int](1)
+  singleton[Boolean](true)
+
+  singleton(1)
+  singleton(true)
+
+  def nth(n: Int, list: List[T]): T = {
+    def iter(x: Int, list: List[T]): T = {
+      if (x == n - 1) list.head
+      else if (list.isEmpty)
+        throw new IndexOutOfBoundsException
+      else iter(x + 1, list.tail)
+    }
+  }
+}

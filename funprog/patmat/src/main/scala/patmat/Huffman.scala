@@ -183,6 +183,7 @@ object Huffman {
       else until(isSingleton, combineThemTrees)(combineThemTrees(trees))
     }
   }
+  
 
   /**
    * This function creates a code tree which is optimal to encode the text `chars`.

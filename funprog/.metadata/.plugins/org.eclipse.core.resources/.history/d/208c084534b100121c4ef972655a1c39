@@ -1,0 +1,29 @@
+package week5
+
+object ImplicitParameters {
+
+def msortPoly[T](xs: List[T])(lt: (T,T) => Boolean): List[T] = {
+    val n = xs.length / 2
+    if (n == 0) xs
+    else {
+
+      val (fst, snd) = xs splitAt n
+      mergePoly(msortPoly(fst)(lt), msortPoly(snd)(lt))(lt)
+    }
+  }
+
+def mergePoly[T](xs: List[T], ys: List[T])(lt: (T,T) => Boolean): List[T] =
+    (xs, ys) match {
+      case (Nil, ys) => ys
+      case (xs, Nil) => xs
+      case (x :: xs1, y :: ys1) =>
+        if (lt(x, y)) x :: mergePoly(xs1, ys)(lt)
+        else y :: mergePoly(xs, ys1)(lt)
+    }
+    
+    val nums = List(2,-4,5,7,1)
+    val fruits = List("apple", "pineapple", "orange", "banana")
+    
+    msortPoly(nums)((x: Int, y: Int) => x < y)
+    msortPoly(fruits)((x: String, y: String) => x.compareTo(y)
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/progfun-classExamples/progfun.iml" filepath="$PROJECT_DIR$/progfun-classExamples/progfun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/progfun-example.iml" filepath="$PROJECT_DIR$/example/progfun-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/funsets/progfun-funsets.iml" filepath="$PROJECT_DIR$/funsets/progfun-funsets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/objsets/progfun-objsets.iml" filepath="$PROJECT_DIR$/objsets/progfun-objsets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recfun/progfun-recfun.iml" filepath="$PROJECT_DIR$/recfun/progfun-recfun.iml" />
+    </modules>
+  </component>
+</project>
+

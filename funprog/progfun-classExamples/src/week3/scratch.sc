@@ -5,16 +5,18 @@ package week3
 import week3._
 
 object scratch {
-  new Rational(1,2)                               //> res0: week3.Rational = 1/2
+  new Rational(1,2)
   
-  def error(msg: String) = throw new Error(msg)   //> error: (msg: String)Nothing
+  def error(msg: String) = throw new Error(msg)
   
-  val x = null                                    //> x  : Null = null
+  val x = null
   
-  val y: String = x                               //> y  : String = null
+  val y: String = x
   
   
-  if(true)1 else false                            //> res1: AnyVal = 1
+  if(true)1 else false
+  
+  def f(xs: List[NonEmpty], x: Empty) = xs prepend x
   
 }
 

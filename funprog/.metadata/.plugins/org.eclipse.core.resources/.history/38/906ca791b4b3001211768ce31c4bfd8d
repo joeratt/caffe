@@ -1,0 +1,12 @@
+package week6
+
+object OtherCollections {
+  println("Welcome to the Scala worksheet")
+  
+  val M = 123
+  val N = 122
+  
+
+	def scalarProduct(xs: Vector[Double], ys: Vector[Double]): Double =
+		(xs zip ys).map{case (x,y) => x*y}.sum
+}

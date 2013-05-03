@@ -1,0 +1,15 @@
+package week3
+
+object Polymorphism {
+  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
+}
+
+object IntList {
+	def singleton[T](elem: T) = new Cons[T](elem, new Nil[T])
+	
+	singleton[Int](1)
+	singleton[Boolean](true)
+	
+	singleton(1)
+	singleton(true)
+}

@@ -1,0 +1,21 @@
+package week4
+
+trait List2[T] {
+	def isEmpty: Boolean
+	def head: T
+	def tail: List2[T]
+}
+
+class Cons2[T](val head: T, val tail: List2[T]) extends List2[T] {
+  def isEmpty = false
+}
+
+object Nil2 extends List2[Nothing] {
+  def isEmpty: Boolean = true
+  def head:Nothing = throw new NoSuchElementException("Nil.head")
+  def tail:Nothing = throw new NoSuchElementException("Nil.tail")
+}
+
+object test {
+	val x: List2[String] = Nil2
+}

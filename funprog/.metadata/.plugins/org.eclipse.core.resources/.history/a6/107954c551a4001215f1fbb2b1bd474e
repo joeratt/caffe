@@ -1,0 +1,21 @@
+package week3
+
+object Polymorphism {
+  	def singleton[T](elem: T) = new Cons[T](elem, new Nil[T])
+	
+	singleton[Int](1)
+	singleton[Boolean](true)
+	
+	singleton(1)
+	singleton(true)
+	
+	
+	  def nth(n:Int, list:List[T]):T = {
+	  def x:Int = 0
+	  while(x < n-1)
+	  if(list.isEmpty)
+	  	throw new IndexOutOfBoundsException
+	  else x++
+		n
+  }
+}

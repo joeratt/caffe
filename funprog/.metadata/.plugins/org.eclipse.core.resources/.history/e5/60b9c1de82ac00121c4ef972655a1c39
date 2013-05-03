@@ -1,0 +1,21 @@
+package week4
+
+object PatternMatching {
+
+  def eval(e: Expr): Int = e match {
+    case Number(n) => n
+    case Sum(e1, e2) => eval(e1) + eval(e2)
+  }
+  
+  eval(Number(1))
+  eval(Sum(Number(1),Number(2)))
+}
+
+trait Expr {
+	def eval(e: Expr): Int = e match {
+    case Number(n) => n
+    case Sum(e1, e2) => eval(e1) + eval(e2)
+  }
+}
+case class Number(n: Int) extends Expr
+case class Sum(e1: Expr, e2: Expr) extends Expr

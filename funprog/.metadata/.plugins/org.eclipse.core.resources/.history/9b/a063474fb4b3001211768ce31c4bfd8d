@@ -1,0 +1,10 @@
+package week6
+
+object OtherCollections {
+  println("Welcome to the Scala worksheet")
+  
+  val M = 123
+  val N = 122
+  
+  (1 to M) flatmap (x => (1 to N) map (y => (x,y))
+}

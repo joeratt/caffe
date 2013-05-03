@@ -1,0 +1,5 @@
+package week5
+
+object HigherOrderListFunctions {
+  println("Welcome to the Scala worksheet")
+}

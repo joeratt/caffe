@@ -1,0 +1,17 @@
+package week3
+
+object Polymorphism {
+  	def singleton[T](elem: T) = new Cons[T](elem, new Nil[T])
+                                                  //> singleton: [T](elem: T)week3.Cons[T]
+	
+	singleton[Int](1)                         //> res0: week3.Cons[Int] = week3.Cons@df9411
+	singleton[Boolean](true)                  //> res1: week3.Cons[Boolean] = week3.Cons@5671e889
+	
+	singleton(1)                              //> res2: week3.Cons[Int] = week3.Cons@5059a6b5
+	singleton(true)                           //> res3: week3.Cons[Boolean] = week3.Cons@2dcfde49
+	
+	
+	  def nth(n:Int, list:List[T]):T = {
+		Nothing    
+  }
+}
