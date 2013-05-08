@@ -68,7 +68,7 @@ object Anagrams {
     // w <- dictionary
     //} yield wordOccurrences(w) -> w
 
-    dictionary groupBy (wordOccurrences(_))
+    dictionary groupBy (wordOccurrences(_)) withDefaultValue List()
   }
 
   /** Returns all the anagrams of a given word. */
