@@ -36,7 +36,7 @@ object Anagrams {
    *  Note: the uppercase and lowercase version of the character are treated as the
    *  same character, and are represented as a lowercase character in the occurrence list.
    */
-  def wordOccurrences(w: Word): Occurrences = w match{
+  def wordOccurrences(w: Word): Occurrences = w match {
     case null => List()
     case ws => ws.toLowerCase.groupBy((x: Char) => x).map { case (c, l) => (c, l.size) }.toList.sortBy(_._1)
   }
@@ -63,10 +63,19 @@ object Anagrams {
    *    List(('a', 1), ('e', 1), ('t', 1)) -> Seq("ate", "eat", "tea")
    *
    */
-  lazy val dictionaryByOccurrences: Map[Occurrences, List[Word]] = ???
+  lazy val dictionaryByOccurrences: Map[Occurrences, List[Word]] = {
+    //val holder = for {
+    // w <- dictionary
+    //} yield wordOccurrences(w) -> w
+
+    dictionary groupBy (wordOccurrences(_))
+  }
 
   /** Returns all the anagrams of a given word. */
-  def wordAnagrams(word: Word): List[Word] = ???
+  def wordAnagrams(word: Word): List[Word] = dictionaryByOccurrences.get(wordOccurrences(word)) match {
+    case Some(ws) => ws
+    case None => List()
+  }
 
   /**
    * Returns the list of all subsets of the occurrence list.

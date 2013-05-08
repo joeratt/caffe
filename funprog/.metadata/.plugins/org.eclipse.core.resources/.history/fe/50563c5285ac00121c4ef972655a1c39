@@ -1,6 +1,0 @@
-package week4
-
-object Lists {
-  val fruit = List("apples","oranges","pears")    //> fruit  : List[String] = List(apples, oranges, pears)
-  val nums = List(1,2,3,4)                        //> nums  : List[Int] = List(1, 2, 3, 4)
-}

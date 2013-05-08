@@ -9,6 +9,16 @@ import Anagrams._
 
 @RunWith(classOf[JUnitRunner])
 class AnagramsSuite extends FunSuite {
+  
+  /*test("thing") {
+   val holder =  for {
+      w <- dictionary
+    } yield (wordOccurrences(w), w)
+    
+    val iWin = holder groupBy (_._1)
+    
+    println(iWin.get(List(('a', 1), ('e', 1), ('t', 1))))
+  }*/
 
   test("wordOccurrences: abcd") {
     assert(wordOccurrences("abcd") === List(('a', 1), ('b', 1), ('c', 1), ('d', 1)))

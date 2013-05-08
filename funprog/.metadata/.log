@@ -1292,3 +1292,12 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.eclipse.ui 4 4 2013-05-03 00:25:21.466
 !MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2013-05-06 23:36:38.694 -----------------------------------------------
+eclipse.buildId=3.0.0-vfinal-20130326-1146-Typesafe
+java.version=1.7.0_15
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.ui 4 4 2013-05-06 23:37:16.941
+!MESSAGE Invalid preference page path: XML Syntax

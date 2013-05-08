@@ -860,3 +860,6 @@ org.scalaide.worksheet.runtime.MissingTopLevelObjectDeclaration: Couldn't find t
 2013-04-27 13:39:11,463 ERROR [Scala Presentation Compiler [progfun-classExamples]] - System.err - at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:771)
 2013-04-27 13:39:11,463 ERROR [Scala Presentation Compiler [progfun-classExamples]] - System.err - at scala.tools.nsc.interactive.Global.backgroundCompile(Global.scala:498)
 2013-04-27 13:39:11,463 ERROR [Scala Presentation Compiler [progfun-classExamples]] - System.err - at scala.tools.nsc.interactive.PresentationCompilerThread.run(PresentationCompilerThread.scala:25)
+2013-05-07 22:00:25,470 ERROR [Worker-111] - System.err - SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2013-05-07 22:00:25,486 ERROR [Worker-111] - System.err - SLF4J: Defaulting to no-operation (NOP) logger implementation
+2013-05-07 22:00:25,486 ERROR [Worker-111] - System.err - SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.

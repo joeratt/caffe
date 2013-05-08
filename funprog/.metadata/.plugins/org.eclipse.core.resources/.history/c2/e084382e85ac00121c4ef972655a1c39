@@ -1,6 +1,0 @@
-package week4
-
-object Lists {
-  val fruit = List("apples","oranges","pears")
-  val nums = Lists(1,2,3,4)
-}

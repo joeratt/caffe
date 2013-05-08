@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="26" version="2.0">
+<workbench progressCount="25" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1020" x="114" y="46">
+<window height="768" maximized="true" width="1016" x="1489" y="46">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -10,7 +10,7 @@
 <coolItem id="group.file" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="132" y="30"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="148" y="30"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="120" y="30"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="30"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="124" y="30"/>
 <coolItem id="org.scala-ide.sdt.core.toolbar" itemType="typeToolBarContribution" x="68" y="30"/>
@@ -21,9 +21,9 @@
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="scala.tools.eclipse.ScalaClassFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="scala.tools.eclipse.ScalaClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="scala.tools.eclipse.ScalaSourceFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.scalaide.worksheet.editors.ScriptEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.scalaide.worksheet.editors.ScriptEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -42,11 +42,13 @@
 <part id="6"/>
 <part id="7"/>
 <part id="8"/>
+<part id="9"/>
+<part id="10"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="scala.tools.eclipse.ScalaSourceFileEditor" name="TweetSet.scala" partName="TweetSet.scala" path="/home/joe/Documents/workspace/caffe/funprog/objsets/src/main/scala/objsets/TweetSet.scala" title="TweetSet.scala" tooltip="objsets/src/main/scala/objsets/TweetSet.scala" workbook="DefaultEditorWorkbook">
+<editor id="scala.tools.eclipse.ScalaSourceFileEditor" name="TweetSet.scala" partName="TweetSet.scala" path="/home/joe/Documents/workspace/caffe/funprog/objsets/src/main/scala/objsets/TweetSet.scala" title="TweetSet.scala" tooltip="objsets/src/main/scala/objsets/TweetSet.scala" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/objsets/src/main/scala/objsets/TweetSet.scala"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6172" selectionTopPixel="1232"/>
 </editor>
@@ -78,9 +80,17 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/objsets/src/main/scala/objsets/TweetData.scala"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="1648"/>
 </editor>
-<editor id="scala.tools.eclipse.ScalaClassFileEditor" name="LinearSeqOptimized.class" partName="LinearSeqOptimized.class" title="LinearSeqOptimized.class" tooltip="scala.collection.LinearSeqOptimized" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" org.eclipse.jdt.ui.ClassFileIdentifier="=objsets/\/home\/joe\/Desktop\/eclipse\/configuration\/org.eclipse.osgi\/bundles\/251\/1\/.cp\/lib\/scala-library.jar&lt;scala.collection(LinearSeqOptimized.class"/>
-<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="2342" selectionTopPixel="1173"/>
+<editor id="org.scalaide.worksheet.editors.ScriptEditor" name="HigherOrderListFunctions.sc" partName="HigherOrderListFunctions.sc" path="/home/joe/Documents/workspace/caffe/funprog/progfun-classExamples/src/week5/HigherOrderListFunctions.sc" title="HigherOrderListFunctions.sc" tooltip="progfun-classExamples/src/week5/HigherOrderListFunctions.sc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/progfun-classExamples/src/week5/HigherOrderListFunctions.sc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1592" selectionTopPixel="0"/>
+</editor>
+<editor id="org.scalaide.worksheet.editors.ScriptEditor" name="ImplicitParameters.sc" partName="ImplicitParameters.sc" path="/home/joe/Documents/workspace/caffe/funprog/progfun-classExamples/src/week5/ImplicitParameters.sc" title="ImplicitParameters.sc" tooltip="progfun-classExamples/src/week5/ImplicitParameters.sc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/progfun-classExamples/src/week5/ImplicitParameters.sc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="154" selectionOffset="1213" selectionTopPixel="35"/>
+</editor>
+<editor activePart="true" focus="true" id="org.scalaide.worksheet.editors.ScriptEditor" name="OtherCollections.sc" partName="OtherCollections.sc" path="/home/joe/Documents/workspace/caffe/funprog/progfun-classExamples/src/week6/OtherCollections.sc" title="OtherCollections.sc" tooltip="progfun-classExamples/src/week6/OtherCollections.sc" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/progfun-classExamples/src/week6/OtherCollections.sc"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="174" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -96,8 +106,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Errors (1 item)"/>
-<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Errors (3 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="276" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -152,8 +161,8 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.scala-ide.sdt.core.perspective">
-<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<perspectives activePart="org.scalaide.worksheet.editors.ScriptEditor" activePerspective="org.scala-ide.sdt.core.perspective">
+<perspective editorAreaTrimState="1" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="scala.tools.eclipse.PerspectiveFactory" id="org.scala-ide.sdt.core.perspective" label="Scala"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
 <alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
@@ -187,21 +196,32 @@
 <perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.jdt.ui.PackageExplorer"/>
-<view id="org.eclipse.ui.views.ProblemView"/>
-<view id="org.eclipse.ui.views.TaskList"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
-<view id="org.eclipse.jdt.junit.ResultView"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
-<fastViewBars/>
+<fastViewBars>
+<fastViewBar fastViewLocation="16384" id="explorer" orientation="512" selectedTabId="org.eclipse.jdt.ui.PackageExplorer" style="1">
+<fastViews>
+<view id="org.eclipse.jdt.ui.PackageExplorer" ratio="0.29957807"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="1024" id="problems" orientation="256" selectedTabId="org.eclipse.jdt.junit.ResultView" style="1">
+<fastViews>
+<view id="org.eclipse.ui.views.ProblemView" ratio="0.3"/>
+<view id="org.eclipse.ui.views.TaskList" ratio="0.3"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.3"/>
+<view id="org.eclipse.jdt.junit.ResultView" ratio="0.4"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="131072" id="right" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="1">
+<fastViews>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
 <layout>
 <mainWindow>
 <info folder="true" part="explorer">
-<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
-<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="stickyFolderRight" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="explorer">
@@ -213,25 +233,18 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.207478" ratioLeft="283" ratioRight="1081" relationship="2" relative="explorer"/>
 <info folder="true" part="problems" ratio="0.67919797" ratioLeft="542" ratioRight="256" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.jdt.junit.ResultView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
-<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
-<page content="org.eclipse.jdt.junit.ResultView" label="JUnit"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-</presentation>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="right" ratio="0.74934036" ratioLeft="568" ratioRight="190" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </mainWindow>
@@ -335,34 +348,11 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/objsets/src/main/scala/objsets/TweetReader.scala"/>
 <editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="scala.tools.eclipse.ScalaClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=objsets/\/home\/joe\/Desktop\/eclipse\/configuration\/org.eclipse.osgi\/bundles\/251\/1\/.cp\/lib\/scala-library.jar&lt;scala.collection(LinearSeqOptimized.class"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="scala.tools.eclipse.ScalaSourceFileEditor" path="/progfun-classExamples/src/week3/List.scala"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" path="/progfun-classExamples/src/week5/HigherOrderListFunctions.sc"/>
+<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="scala.tools.eclipse.ScalaClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=objsets/\/home\/joe\/Desktop\/eclipse\/configuration\/org.eclipse.osgi\/bundles\/251\/1\/.cp\/lib\/scala-library.jar&lt;scala.collection(LinearSeqOptimized.class"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" path="/progfun-classExamples/src/week5/ImplicitParameters.sc"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" path="/progfun-classExamples/src/week6/OtherCollections.sc"/>
 </editors>
-<item historyLabel="TweetSet.scala" index="0">
-<position info="not_deleted" x="5553" y="0"/>
-</item>
-<item historyLabel="TweetSetSuite.scala" index="1">
-<position info="not_deleted" x="630" y="0"/>
-</item>
-<item historyLabel="TweetSet.scala" index="0">
-<position info="not_deleted" x="3744" y="0"/>
-</item>
-<item historyLabel="TweetSetSuite.scala" index="1">
-<position info="not_deleted" x="630" y="0"/>
-</item>
-<item historyLabel="TweetSetSuite.scala" index="1">
-<position/>
-</item>
-<item historyLabel="TweetSetSuite.scala" index="1">
-<position/>
-</item>
-<item historyLabel="TweetSet.scala" index="0">
-<position info="not_deleted" x="3744" y="0"/>
-</item>
-<item historyLabel="TweetSet.scala" index="0">
-<position info="not_deleted" x="5529" y="0"/>
-</item>
-<item historyLabel="TweetSetSuite.scala" index="1">
-<position info="not_deleted" x="1855" y="4"/>
-</item>
 <item historyLabel="TweetSet.scala" index="0">
 <position info="not_deleted" x="5705" y="0"/>
 </item>
@@ -483,8 +473,35 @@
 <item historyLabel="TweetSet.scala" index="0">
 <position info="not_deleted" x="6301" y="0"/>
 </item>
-<item active="true" historyLabel="TweetSet.scala" index="0">
+<item historyLabel="TweetSet.scala" index="0">
 <position info="not_deleted" x="6408" y="109"/>
+</item>
+<item historyLabel="HigherOrderListFunctions.sc" index="6">
+<position info="not_deleted" x="1802" y="0"/>
+</item>
+<item historyLabel="LinearSeqOptimized.class" index="7">
+<position info="not_deleted" x="2342" y="8"/>
+</item>
+<item historyLabel="HigherOrderListFunctions.sc" index="6">
+<position/>
+</item>
+<item historyLabel="ImplicitParameters.sc" index="8">
+<position info="not_deleted" x="1213" y="154"/>
+</item>
+<item historyLabel="HigherOrderListFunctions.sc" index="6">
+<position info="not_deleted" x="1537" y="0"/>
+</item>
+<item historyLabel="ImplicitParameters.sc" index="8">
+<position info="not_deleted" x="1213" y="154"/>
+</item>
+<item historyLabel="HigherOrderListFunctions.sc" index="6">
+<position info="not_deleted" x="1592" y="0"/>
+</item>
+<item historyLabel="OtherCollections.sc" index="9">
+<position info="not_deleted" x="1611" y="0"/>
+</item>
+<item active="true" historyLabel="OtherCollections.sc" index="9">
+<position/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -510,6 +527,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="OtherCollections.sc" tooltip="progfun-classExamples/src/week6/OtherCollections.sc">
+<persistable path="/progfun-classExamples/src/week6/OtherCollections.sc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="ImplicitParameters.sc" tooltip="progfun-classExamples/src/week5/ImplicitParameters.sc">
+<persistable path="/progfun-classExamples/src/week5/ImplicitParameters.sc"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="HigherOrderListFunctions.sc" tooltip="progfun-classExamples/src/week5/HigherOrderListFunctions.sc">
+<persistable path="/progfun-classExamples/src/week5/HigherOrderListFunctions.sc"/>
+</file>
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="scala.tools.eclipse.ScalaClassFileEditor" name="LinearSeqOptimized.class" tooltip="scala.collection.LinearSeqOptimized">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=objsets/\/home\/joe\/Desktop\/eclipse\/configuration\/org.eclipse.osgi\/bundles\/251\/1\/.cp\/lib\/scala-library.jar&lt;scala.collection(LinearSeqOptimized.class"/>
 </file>
@@ -545,15 +571,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="Polymorphism.sc" tooltip="progfun-classExamples/src/week3/Polymorphism.sc">
 <persistable path="/progfun-classExamples/src/week3/Polymorphism.sc"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="scratch.sc" tooltip="progfun-classExamples/src/week3/scratch.sc">
-<persistable path="/progfun-classExamples/src/week3/scratch.sc"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="MoreFUnWIthRationals.sc" tooltip="progfun-classExamples/src/week2/MoreFUnWIthRationals.sc">
-<persistable path="/progfun-classExamples/src/week2/MoreFUnWIthRationals.sc"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.scalaide.worksheet.editors.ScriptEditor" name="EvaluationsAndOperators.sc" tooltip="progfun-classExamples/src/week2/EvaluationsAndOperators.sc">
-<persistable path="/progfun-classExamples/src/week2/EvaluationsAndOperators.sc"/>
 </file>
 </mruList>
 </workbench>
