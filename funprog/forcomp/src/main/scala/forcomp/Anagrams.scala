@@ -103,12 +103,15 @@ object Anagrams {
   def combinations(occurrences: Occurrences): List[Occurrences] =
     if (occurrences.isEmpty) List()
     else {
-      for {
-        split <- 1 to occurrences.size //TODO: FixMe :(
-        occs <- occurrences take split
-        rest <- combinations(occurrences drop split)
-      } yield occs :: rest
-    }.toList
+     val thing = for {
+        (c:Char, n:Int) <- occurrences
+          y <- 1 to n
+      } yield (c,y)
+      println(thing)
+      val thing2 = thing groupBy(_._1)
+      println("#2: " + thing2)
+      Nil
+    }
 
   /**
    * Subtracts occurrence list `y` from occurrence list `x`.
