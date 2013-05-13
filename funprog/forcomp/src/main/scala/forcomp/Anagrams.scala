@@ -37,13 +37,13 @@ object Anagrams {
    *  same character, and are represented as a lowercase character in the occurrence list.
    */
   def wordOccurrences(w: Word): Occurrences = w match {
-    case null => List()
+    case "" => List()
     case ws => ws.toLowerCase.groupBy((x: Char) => x).map { case (c, l) => (c, l.size) }.toList.sortBy(_._1)
   }
 
   /** Converts a sentence into its character occurrence list. */
   def sentenceOccurrences(s: Sentence): Occurrences = s match {
-    case null => List()
+    case List() => List()
     case ss => wordOccurrences(s.mkString(""))
   }
 
@@ -101,16 +101,11 @@ object Anagrams {
    *  in the example above could have been displayed in some other order.
    */
   def combinations(occurrences: Occurrences): List[Occurrences] =
-    if (occurrences.isEmpty) List()
+    if (occurrences.isEmpty) List(List())
     else {
-     val thing = for {
-        (c:Char, n:Int) <- occurrences
-          y <- 1 to n
-      } yield (c,y)
-      println(thing)
-      val thing2 = thing groupBy(_._1)
-      println("#2: " + thing2)
-      Nil
+      val comb: List[Occurrences] =
+      occurrences.map(occ => (for (i <- 1 to occ._2 ) yield (occ._1, i)).toList)
+      comb.foldRight(List[Occurrences](List()))((x,y) => y ::: (for(i<-x;j<-y)yield(i::j)))
     }
 
   /**
@@ -124,7 +119,24 @@ object Anagrams {
    *  Note: the resulting value is an occurrence - meaning it is sorted
    *  and has no zero-entries.
    */
-  def subtract(x: Occurrences, y: Occurrences): Occurrences = ???
+  def subtract(x: Occurrences, y: Occurrences): Occurrences = x match {
+    case List() => List()
+    case o :: os => y match {
+      case List() => x
+      case o2 :: o2s => {
+        val z = y.toMap
+        for {
+          (ch, num) <- x
+          subVal = getValue(ch, z)
+          if ((num - subVal) > 0)
+        } yield (ch, num - subVal)
+      }
+    }
+  }
+  def getValue(char: Char, z: Map[Char, Int]) = z.get(char) match {
+    case Some(capital) => capital
+    case None => 0
+  }
 
   /**
    * Returns a list of all anagram sentences of the given sentence.
@@ -167,6 +179,9 @@ object Anagrams {
    *
    *  Note: There is only one anagram of an empty sentence.
    */
-  def sentenceAnagrams(sentence: Sentence): List[Sentence] = ???
+  def sentenceAnagrams(sentence: Sentence): List[Sentence] = sentence match {
+    case List() => List(List())
+    case w::ws => ???
+  } 
 
 }
